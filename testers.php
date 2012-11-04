@@ -46,7 +46,7 @@ get_header(); ?>
 							<?php } else { ?>
 								<td>
 									<ul>
-										<?php $testers = get_children( 'post_parent=' . $keys[$tester_total] );
+										<?php $testers = get_children( 'post_parent=' . $keys[$tester_total] . '&post_type=page' );
 										foreach($testers as $tester) { ?>
 											<li><a href="<?php echo get_permalink( $tester->ID ) ?>"><?php echo $tester->post_title; ?></a></li>
 										<?php } ?>
