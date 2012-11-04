@@ -16,7 +16,7 @@ get_header(); ?>
 					</header><!-- .entry-header -->
 
 					<?php
-					$series = get_children( 'post_parent=' . get_the_ID() );
+					$series = get_children( 'post_parent=' . get_the_ID() . '&order=ASC' );
 					$keys = array_keys( $series );
 					$thumb_total = $series_total = $tester_total = 0; ?>
 					<table><?php
