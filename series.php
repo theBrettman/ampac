@@ -17,7 +17,7 @@ get_header(); ?>
 					</header><!-- .entry-header -->
 					
 					<?php
-					$children = get_children( 'post_parent=' . get_the_ID() . '&order=ASC' );
+					$children = get_children( 'post_parent=' . get_the_ID() . '&post_type=page&order=ASC' );
 					foreach( $children as $child ) { ?>
 					<ul class="unstyled">
 						<li class="well row-fluid show-grid">							

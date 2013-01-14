@@ -52,6 +52,10 @@ h3.hilite {
 .ygtvlabel, .ygtvlabel:link, .ygtvlabel:visited, .ygtvlabel:hover {
 	background-color: transparent !important;
 }
+table {
+	border-spacing: 2px;
+	border-collapse: separate;
+}
 td {
 	vertical-align: middle;
 }
@@ -86,16 +90,17 @@ td {
 }
 .thumb-border {
 	background-color: white;
-	border: 1px solid #0088CC;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
+	border: 3px solid #0088CC;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
 	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 .page-template-testers-php h5 {
 	font-size: 13px;
+	margin: 0;
 }
 #all-testers ul {
 	margin: 1em 0;
@@ -110,6 +115,16 @@ td {
 /* Contacts */
 
 /* Testers */
+td.well {
+	vertical-align: top;
+}
+td.well ul {
+	margin: 0;
+	text-align: center;
+}
+td.well a {
+	color: black;	
+}
 
 /* Series */
 

@@ -23,7 +23,7 @@ get_header(); ?>
 							if ( $thumb_total >= count( $keys ) ) { ?>
 								<td>&nbsp;</td>
 							<?php } else { ?>
-								<td class="ui-corner-all"><a href="<?php echo get_permalink( $keys[$thumb_total] ); ?>"><?php echo get_the_post_thumbnail( $keys[$thumb_total], 'medium' ); ?></a></td><?php
+								<td class="thumb-border"><a href="<?php echo get_permalink( $keys[$thumb_total] ); ?>"><?php echo get_the_post_thumbnail( $keys[$thumb_total], 'medium' ); ?></a></td><?php
 							}
 						$thumb_total++;
 						} ?>
@@ -32,7 +32,7 @@ get_header(); ?>
 							if ( $series_total >= count( $keys ) ) { ?>
 								<td>&nbsp;</td>
 							<?php } else { ?>
-								<td class="hilite pagination-centered"><h5><a href="<?php echo get_permalink( $keys[$series_total] ) ?>"><?php echo $series[$keys[$series_total]]->post_title; ?></a></h5></td><?php
+								<td class="hilite pagination-centered" width="136"><h5><a href="<?php echo get_permalink( $keys[$series_total] ) ?>"><?php echo $series[$keys[$series_total]]->post_title; ?></a></h5></td><?php
 							}
 						$series_total++;
 						} ?>
@@ -43,7 +43,7 @@ get_header(); ?>
 							<?php } else { ?>
 								<td class="well">
 									<ul class="unstyled">
-										<?php $testers = get_children( 'post_parent=' . $keys[$tester_total] . '&post_type=page' );
+										<?php $testers = get_children( 'post_parent=' . $keys[$tester_total] . '&post_type=page&order=ASC' );
 										foreach($testers as $tester) { ?>
 											<li><a href="<?php echo get_permalink( $tester->ID ) ?>"><?php echo $tester->post_title; ?></a></li>
 										<?php } ?>
