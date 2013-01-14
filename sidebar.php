@@ -15,19 +15,10 @@ if ( 'content' != $current_layout ) :
 		<div id="secondary" class="widget-area" role="complementary">
 			<?php if ( ( ! is_home() && ! dynamic_sidebar( 'sidebar-1' ) ) || ( is_home() && ! dynamic_sidebar( 'sidebar-0' ) ) ) : ?>
 
-				<aside id="archives" class="widget">
-					<h3 class="widget-title"><?php _e( 'Archives', 'twentyeleven' ); ?></h3>
+				<aside id="list-pages" class="widget well">
+					<h3 class="widget-title hilite"><?php _e( 'Testers'); ?></h3>
 					<ul>
-						<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
-					</ul>
-				</aside>
-
-				<aside id="meta" class="widget">
-					<h3 class="widget-title"><?php _e( 'Meta', 'twentyeleven' ); ?></h3>
-					<ul>
-						<?php wp_register(); ?>
-						<li><?php wp_loginout(); ?></li>
-						<?php wp_meta(); ?>
+						<?php wp_list_pages( "title_li=&child_of=2&sort_column=menu_order" ); ?>
 					</ul>
 				</aside>
 

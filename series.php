@@ -13,25 +13,31 @@ get_header(); ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 
 					<header class="entry-header">
-						<h1 class="entry-title"><?php the_title(); ?></h1>
+						<h2 class="emHdg pagination-centered"><?php the_title(); ?></h2>
 					</header><!-- .entry-header -->
 					
 					<?php
-					$children = get_children( 'post_parent=' . get_the_ID() );
+					$children = get_children( 'post_parent=' . get_the_ID() . '&order=ASC' );
 					foreach( $children as $child ) { ?>
-						<div style="display: table-cell">
-							<a href="<?php echo get_permalink( $child->ID ); ?>">
-								<?php echo get_the_post_thumbnail( $child->ID, 'thumbnail' ); ?>
-							</a>
-						</div>
-						<div style="display: table-cell; width: 100%; vertical-align: top;">
-							<h3>
+					<ul class="unstyled">
+						<li class="well row-fluid show-grid">							
+							<div class="span3 thumb-border pagination-centered">
 								<a href="<?php echo get_permalink( $child->ID ); ?>">
-									<?php echo $child->post_title ?> - <?php echo get_post_meta( $child->ID, 'model_name', true ); ?>
+									<?php echo get_the_post_thumbnail( $child->ID, 'medium' ); ?>
 								</a>
-							</h3>
-							<p><?php echo nl2br( get_post_meta( $child->ID, 'excerpt', true ) ); ?></p>
-						</div>
+							</div>
+							<div class="span9">
+								<h3 class="hilite">
+									<a href="<?php echo get_permalink( $child->ID ); ?>">
+										<?php echo $child->post_title ?> - <?php echo get_post_meta( $child->ID, 'model_name', true ); ?>
+									</a>
+								</h3>
+								<p>
+								<?php echo nl2br( get_post_meta( $child->ID, 'excerpt', true ) ); ?>
+								<p>
+							</div>	
+						</li>
+					</ul>
 					<?php }
 					?>
 					</table>

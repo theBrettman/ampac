@@ -24,24 +24,21 @@ function ampac_register_widgets() {
 	) );
 }
 
-/*add_action( 'wp_enqueue_scripts' , 'load_scripts' );
+add_action( 'wp_enqueue_scripts' , 'load_treeview_scripts' );
 
-function load_scripts() {
-    if ( is_page_template( 'testers.php' ) || is_page_template( 'series.php' ) || is_page_template( 'tester.php' ) ) {
-		wp_register_script( 'yahoo-dom-event' , 'http://yui.yahooapis.com/2.9.0/build/yahoo-dom-event/yahoo-dom-event.js' );  
-		wp_register_script( 'treeview' , 'http://yui.yahooapis.com/2.9.0/build/treeview/treeview-min.js', array( 'yahoo-dom-event' ) );  
-		wp_register_script( 'treemenu' , get_bloginfo( 'stylesheet_directory' ) . '/treemenu.js' ,  array( 'treeview' ) , '201208061432' );
-		wp_enqueue_script( 'treemenu' );
-	}
+function load_treeview_scripts() {
+	wp_deregister_script( 'jquery' );
+	wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js' );
+	wp_register_script( 'treeview' , get_bloginfo( 'stylesheet_directory' ) . '/js/treeview.js', false, '201301080906', true );  
+	wp_enqueue_script( 'treemenu' , get_bloginfo( 'stylesheet_directory' ) . '/js/treemenu.js' ,  array( 'treeview' ) , '201208061432', true );
+	wp_enqueue_script( 'equalHeights', 'https://raw.github.com/filamentgroup/jQuery-Equal-Heights/master/jQuery.equalHeights.js', array( 'jquery' ), '201301132210', true );
 }
 
-add_action( 'wp_enqueue_scripts' , 'load_styles' );
+add_action( 'wp_enqueue_scripts' , 'load_treeview_styles' );
 
-function load_styles() {
-	if ( is_page_template( 'testers.php' ) || is_page_template( 'series.php' ) || is_page_template( 'tester.php' ) ) {
-		wp_register_style( 'treeview' , 'http://yui.yahooapis.com/2.9.0/build/treeview/assets/skins/sam/treeview.css' , false , '201208042055'  );
-		wp_enqueue_style( 'treeview' );
-	}
-}*/
+function load_treeview_styles() {
+	wp_register_style( 'treeview' , get_bloginfo( 'stylesheet_directory' ) . '/treeview.css' , false , '201201080908' );
+	wp_enqueue_style( 'treeview' );
+}
 
 ?>
