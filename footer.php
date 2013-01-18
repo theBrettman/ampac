@@ -25,6 +25,7 @@
 			<div id="site-generator">
 				<p>&copy;<?php echo date( 'Y' ); ?>&nbsp;Ampac International, Inc. All rights reserved.</p>
 			</div>
+
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

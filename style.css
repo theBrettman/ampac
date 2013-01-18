@@ -7,27 +7,55 @@ Template:       twentyeleven
 @import url("./bootstrap.min.css");
 @import url("./jquery-ui-1.9.2.custom.min.css");
 @import url("http://yui.yahooapis.com/combo?2.9.0/build/treeview/assets/skins/sam/treeview.css");
+@import url("http://fonts.googleapis.com/css?family=Yesteryear");
 
 /**
  * 	Global
  */
 
+#page {
+	border-radius: 50px;
+	padding-top: 50px;
+}
+.one-column #page {
+	max-width: 1000px;
+}
 #site-title {
-	padding: 0;
+	line-height: 1.1em;
+	padding: 0;	
+	text-shadow: 2px -2px 2px #F80;
+}
+#site-title a {
+	font-size: 1.3em;
+	line-height: 1.1em;
+}
+.siteHead {
+	font-family: "Yesteryear", cursive;
+}
+#site-generator {
+	border-bottom-right-radius: 50px;
+	border-bottom-left-radius: 50px;
 }
 .left-sidebar #content {
-	margin: 0 8% 0 28%;
+	margin: 0 8% 3% 28%;
 	width: 64%;
 }
 .left-sidebar #secondary {
-	margin: 19px 0 0 5%;
+	margin: 5% 0 0 5%;
+}
+h2.emHdg {
+	color: #0088CC;
+	font-size: 1.5em;
+	font-style: italic;
+	font-family: "Times New Roman", serif;
 }
 .hilite {
 	background-color: #0088CC;
-	color: white;
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
 	border-radius: 6px;
+	color: white;
+	padding: 0 .5em;
 }
 .hilite a {
 	color: white;
@@ -53,16 +81,41 @@ h3.hilite {
 	background-color: transparent !important;
 }
 table {
-	border-spacing: 2px;
+	border-spacing: 10px;
 	border-collapse: separate;
 }
 td {
 	vertical-align: middle;
 }
+.widget_calendar #wp-calendar {
+	border-collapse: collapse;
+}
 
 /**
  * 	Header
  */
+
+#branding {
+	border-top: none;
+}
+#branding .siteHead {
+	background: -moz-linear-gradient(-45deg,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(40%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 40%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 40%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 40%,rgba(255,255,255,0) 100%); /* IE10+ */
+	background: linear-gradient(135deg,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 40%,rgba(255,255,255,0) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	margin: 0 5.6%;
+	position: absolute;
+}
+#site-description {
+	font-size: 1.8em;
+	font-style: italic;
+	margin: 0 0px 7.65625em 0;
+	text-shadow: 2px -2px 2px #08C;
+}
+
 
 /**
  * 	Page
@@ -72,12 +125,6 @@ td {
 	font-size: 2em;
 	margin: 0.67em 0;
 	padding: 0 0 0 5px;
-}
-.page h2.emHdg {
-	color: #0088CC;
-	font-size: 1.5em;
-	font-style: italic;
-	font-family: "Times New Roman", serif;
 }
 .page h4 {
 	font-weight: bold;
@@ -90,7 +137,7 @@ td {
 }
 .thumb-border {
 	background-color: white;
-	border: 3px solid #0088CC;
+	border: 2px solid #0088CC;
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
 	border-radius: 6px;
@@ -112,9 +159,23 @@ td {
 
 /* Home */
 
+/* Blog */
+
+.blog.left-sidebar #secondary {
+	margin: 3% 0 0 5%;
+}
+
+
 /* Contacts */
+.category-contacts .entry-content {
+	padding: 0 1em;
+}
+
 
 /* Testers */
+td.hilite {
+	padding: 10px;
+}
 td.well {
 	vertical-align: top;
 }
@@ -128,8 +189,17 @@ td.well a {
 
 /* Series */
 
+.page-template-series-php.left-sidebar #secondary {
+	margin: 6% 0 0 5%;
+}
+
+
+
 /* Tester */
 
+.page-template-tester-php.left-sidebar #secondary {
+	margin: 2% 0 0 5%;
+}
 .features {
 	width: 220px;
 }

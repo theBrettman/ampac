@@ -23,7 +23,7 @@ get_header(); ?>
 							if ( $thumb_total >= count( $keys ) ) { ?>
 								<td>&nbsp;</td>
 							<?php } else { ?>
-								<td class="thumb-border"><a href="<?php echo get_permalink( $keys[$thumb_total] ); ?>"><?php echo get_the_post_thumbnail( $keys[$thumb_total], 'medium' ); ?></a></td><?php
+								<td class="thumb-border pagination-centered"><a href="<?php echo get_permalink( $keys[$thumb_total] ); ?>"><?php echo get_the_post_thumbnail( $keys[$thumb_total], 'medium' ); ?></a></td><?php
 							}
 						$thumb_total++;
 						} ?>
